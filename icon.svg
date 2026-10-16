@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Fondo azul degradado -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c8bf5"/>
+      <stop offset="100%" stop-color="#4a5ad8"/>
+    </linearGradient>
+
+    <!-- Cuerpo del cilindro: gradiente horizontal
+         oscuro → claro → oscuro para simular la curvatura -->
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#b8c2e8"/>
+      <stop offset="15%"  stop-color="#dde4f5"/>
+      <stop offset="45%"  stop-color="#ffffff"/>
+      <stop offset="55%"  stop-color="#ffffff"/>
+      <stop offset="85%"  stop-color="#dde4f5"/>
+      <stop offset="100%" stop-color="#b8c2e8"/>
+    </linearGradient>
+
+    <!-- Tapa superior: gradiente radial con luz en el centro-arriba -->
+    <radialGradient id="lidGrad" cx="0.5" cy="0.35" r="0.75">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="60%"  stop-color="#eef2fc"/>
+      <stop offset="100%" stop-color="#c4cce8"/>
+    </radialGradient>
+
+    <!-- Sombra suave debajo del cilindro -->
+    <radialGradient id="shadowGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#1a2478" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1a2478" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Reflejo tenue en el borde izquierdo de la tapa (highlight) -->
+    <linearGradient id="highlight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <g transform="translate(256, 256)">
+
+    <!-- Sombra elíptica debajo del cilindro -->
+    <ellipse cx="0" cy="135" rx="140" ry="30" fill="url(#shadowGrad)"/>
+
+    <!-- CUERPO del cilindro -->
+    <path d="M -125 -85
+             L -125 85
+             A 125 32 0 0 0 125 85
+             L 125 -85
+             Z"
+          fill="url(#bodyGrad)"/>
+
+    <!-- Sombra inferior interna (donde el cuerpo se curva hacia abajo) -->
+    <path d="M -125 60
+             A 125 32 0 0 0 125 60
+             A 125 32 0 0 1 -125 60
+             Z"
+          fill="#7c8bf5" opacity="0.15"/>
+
+    <!-- Divisor 1 (línea curva que da el efecto de nivel) -->
+    <path d="M -125 -28 A 125 32 0 0 0 125 -28"
+          fill="none" stroke="#8b98d8" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Divisor 2 -->
+    <path d="M -125 28 A 125 32 0 0 0 125 28"
+          fill="none" stroke="#8b98d8" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- TAPA superior (elipse con gradiente radial) -->
+    <ellipse cx="0" cy="-85" rx="125" ry="32" fill="url(#lidGrad)"/>
+
+    <!-- Anillo sutil alrededor de la tapa (efecto de borde metálico) -->
+    <ellipse cx="0" cy="-85" rx="125" ry="32"
+             fill="none" stroke="#a8b4dc" stroke-width="2"/>
+
+    <!-- Brillo superior-izquierdo en la tapa -->
+    <ellipse cx="-45" cy="-92" rx="55" ry="14"
+             fill="#ffffff" opacity="0.6"/>
+
+    <!-- TEXTO SQL sobre el nivel central -->
+    <text x="0" y="14"
+          font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+          font-size="60"
+          font-weight="800"
+          fill="#4a5ad8"
+          text-anchor="middle"
+          letter-spacing="-1">SQL</text>
+
+  </g>
+</svg>

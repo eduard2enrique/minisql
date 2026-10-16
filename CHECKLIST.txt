@@ -1,0 +1,18 @@
+PAQUETE LIMPIO v2.0.29 - INICIO DESDE CERO (Git + GitHub Pages)
+================================================================
+ESTE ZIP TRAE 7 ARCHIVOS. Tu debes AGREGAR estos 3 tuyos
+(ya los tienes en tu telefono, en tu carpeta del proyecto):
+
+  [ ] icon.svg            (tu icono original)
+  [ ] InterVariable.woff2 (tu fuente)
+  [ ] xlsx.full.min.js    (importar Excel)
+
+LA CARPETA FINAL DEBE TENER EXACTAMENTE ESTOS 10, EN LA RAIZ:
+
+  index.html  manifest.json  sw.js
+  icon.svg  icon-192.png  icon-512.png  icon-180.png
+  InterVariable.woff2  xlsx.full.min.js
+
+NADA MAS: sin zips, sin LEEMEs, sin carpetas anidadas.
+
+LUEGO: comprime la carpeta, sube TODO al repo nuevo, y activa Pages.
