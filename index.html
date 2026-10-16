@@ -918,7 +918,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
       <div class="brand-logo" id="brand-home">SQL</div>
       <div class="brand-text">
         <div class="brand-name"><span>MiniSQL</span></div>
-        <div class="brand-tag">v2.0.31</div>
+        <div class="brand-tag">v2.0.32</div>
       </div>
       <div class="header-actions">
   <button class="brand-action install-btn" id="btn-install" type="button" hidden title="Instalar app" aria-label="Instalar la aplicación"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
@@ -3488,7 +3488,7 @@ function fkPopulateDef(col){
   fkSetFlag(fksheetNN,!!col.notnull||!!col.pk);
   fkSetFlag(fksheetUQ,!!col.unique);
   fkSetFlag(fksheetAI,!!col.autoinc);
-  fksheetAI.parentElement.style.display=col.pk?'flex':'none';
+  fksheetAI.style.display=col.pk?'':'none';
   fkUpdateDefSQL();
 }
 [fksheetNN,fksheetUQ,fksheetAI].forEach(function(btn){
