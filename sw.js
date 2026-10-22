@@ -1,7 +1,7 @@
 /* MiniSQL · Service Worker FINAL v2.0.17
    Caché completo: index + manifest + iconos + fuente + xlsx (Importar).
    Instalación robusta: guarda lo que exista, no aborta si falta algo. */
-var CACHE = 'minisql-v2.0.32';
+var CACHE = 'minisql-v2.0.33';
 var ASSETS = [
   './',
   './index.html',

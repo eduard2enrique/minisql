@@ -918,7 +918,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
       <div class="brand-logo" id="brand-home">SQL</div>
       <div class="brand-text">
         <div class="brand-name"><span>MiniSQL</span></div>
-        <div class="brand-tag">v2.0.32</div>
+        <div class="brand-tag">v2.0.33</div>
       </div>
       <div class="header-actions">
   <button class="brand-action install-btn" id="btn-install" type="button" hidden title="Instalar app" aria-label="Instalar la aplicación"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
@@ -3568,6 +3568,11 @@ function applyColumnDefChanges(t,col){
   persist();
   return true;
 }
+/* NIVEL 3C: el pie del Disenador debe vivir DENTRO de designer-body
+   (esa capa tiene posicion propia y scroll; en el panel quedaba bajo el encabezado) */
+var __rdOrig=renderDesigner;
+renderDesigner=function(){__rdOrig.apply(this,arguments);var __b=document.getElementById('designer-body');if(!__b)return;var __f=__b.parentElement.querySelector('.footer-credit');if(__f&&!__b.contains(__f))__b.appendChild(__f);};
+
 document.getElementById('fksheet-save').addEventListener('click',function(){
   if(!fkCurrentTable||!fkCurrentCol)return;
   var t=db.tables[fkCurrentTable.toLowerCase()];if(!t)return;
